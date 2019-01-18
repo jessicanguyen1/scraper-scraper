@@ -8,4 +8,10 @@ module.exports = function (app) {
             pageTitle: "Scraper Scraper App"
         });
     });
+
+    app.get("/profile", function (req, res) {
+        res.render("profile", {
+            pageTitle: "Profile Page"
+        });
+    });
 }
