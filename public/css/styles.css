@@ -1,9 +1,19 @@
 html, body { margin: 0; padding: 0; }
 
+.top-bar {
+    background: black !important;
+}
+
+
 .nav-name li {
     display: inline-block !important;
     list-style-type: none;
     margin-right: 30px;
+    background: black !important;
+}
+
+.top-bar, .top-bar ul {
+    background-color: black;
 }
 
 
@@ -25,8 +35,19 @@ html, body { margin: 0; padding: 0; }
   }
   
   .hero-section .hero-section-text {
-    color: rgb(25, 126, 25);
-    text-shadow: 1px 1px 2px #0a0a0a;
+    /* text-shadow: 1px 1px 2px #0a0a0a; */
+    font-weight: bold;
+  }
+
+  .hero-section-text h1 {
+    color: #ffffff;
+    background-color: black;
+    font-size: 100px;
+    padding: 20px;
+    border-radius: 25px;
   }
   
+  .button {
+    border-radius: 10px;
+  }
   
