@@ -5,13 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.1/css/foundation.min.css">
     <link rel="stylesheet" href="css/styles.css">
 
     <title>{{ pageTitle }}</title>
 </head>
 
 <body>
+    {{!-- Nav bar --}}
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area nav-name">
+            <li>
+                <h1><a href="/">Scraper Scraper</a></h1>
+            </li>
+            <li>
+                <h5><a href="/">Home</a></h5>
+            </li>
+            <li>
+                <h5><a href="/saved-articles">Saved Articles</a></h5>
+            </li>
+            <li> <a href="/api/get-articles" class="button">Scrape New Articles!</a>
+            </li>
+            <li> <a href="#" class="button">Clear Articles!</a>
+            </li>
+        </ul>
+    </nav>
+
+    {{!-- Jumbotron --}}
+    <div class="hero-section">
+        <div class="hero-section-text">
+            <h1>Header</h1>
+            <h5>subtitle about anything you like</h5>
+        </div>
+    </div>
+
+    {{#each results}}
+    <li>{{this}}</li>
+    {{/each}}
+
     {{{ body }}}
 </body>
 

@@ -5,8 +5,6 @@ const PORT = process.env.PORT || 3000;
 const exphbs = require("express-handlebars");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const cheerio = require("cheerio");
-const request = require("request");
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
