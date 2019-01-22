@@ -2,7 +2,11 @@ const path = require("path");
 const cheerio = require("cheerio");
 const request = require("request");
 var results = [];
-var newResults;
+
+// Require all models
+var db = require("../models");
+
+// var newResults;
 
 module.exports = function (app) {
 
@@ -42,19 +46,27 @@ module.exports = function (app) {
                     // console.log(title)
 
                     // Save these results in an object that we'll push into the results array we defined earlier
-                    newResults.push({
+                    results.push({
                         title: title,
                         link: link
                     });
+                    console.log(results);
 
-                    results = newResults;
-                    // let a = $(this).prev();
-                    // console.log(a.text());
+                    db.Article.findOne({ title: title }).then(function (data) {
+
+                        console.log(data);
+
+                        if (data === null) {
+
+                            db.Article.create(result).then(function (dbArticle) {
+                                res.json(dbArticle);
+                            });
+                        }
+                    }).catch(function (err) {
+                        res.json(err);
+                    });
 
                 });
-                // return res.redirect("index", {
-                //     results: results
-                // });
             }
         });
         // console.log(results);
